@@ -55,7 +55,7 @@ export const app = new Vue({
   el: '#app',
 
   data: {
-    rawMeetup: {},
+    rawMeetup: null,
   },
 
   async mounted() {
@@ -63,7 +63,7 @@ export const app = new Vue({
   },
 
   computed: {
-    convertedMeetup: function (){
+    convertedMeetup() {
       if (!this.rawMeetup){
         return {}
       }
@@ -89,16 +89,16 @@ export const app = new Vue({
           }) : [],
       }
     },
-    imageUrl: function(){
-      return this.rawMeetup.imageId ? getMeetupCoverLink(this.rawMeetup) : '';
+    imageUrl() {
+      return this.rawMeetup?.imageId ? getMeetupCoverLink(this.rawMeetup) : '';
     },
-    coverStyle: function(){
+    coverStyle() {
       return this.imageUrl ? {'--bg-url': `url('${this.imageUrl}')`}: {};
     },
   },
 
   methods: {
-    getRawMeetup: async function (){
+    async getRawMeetup() {
       const result = await fetch(`${API_URL}/meetups/${MEETUP_ID}`);
       return await result.json();
     },

@@ -6,7 +6,7 @@ const app = new Vue ({
         currentNum: 0,
     },
     methods: {
-        addPlusOne: function () {
+        addPlusOne () {
             return this.currentNum += 1;
         },
     }

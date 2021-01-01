@@ -8,9 +8,12 @@ export const MeetupAgenda = {
       <h3>Программа</h3>
       <div class="meetup-agenda">
         <p class="meetup-agenda__empty" v-if="!agenda?.length">Программа пока пуста, но когда-нибудь в ней обязательно что-нибудь появится!</p>
-        <div v-for="agendaItem in agenda">
-          <MeetupAgendaItem :agendaItem="agendaItem"/>
-        </div>
+        <MeetupAgendaItem 
+          class="meetup-agenda__item" 
+          v-for="agendaItem in agenda" 
+          :agendaItem="agendaItem" 
+          :key="agendaItem.id"
+        />
       </div>
     </div>
   `,
@@ -22,6 +25,7 @@ export const MeetupAgenda = {
   props: {
     agenda: {
       type: Array,
+      required: true, 
     }
   }
   

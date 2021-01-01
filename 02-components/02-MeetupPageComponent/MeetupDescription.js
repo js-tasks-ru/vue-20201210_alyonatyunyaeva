@@ -6,8 +6,6 @@ export const MeetupDescription = {
     </div>
   `,
   props: {
-    description: {
-      type: String
-    }
+    description: String
   }
 };

@@ -7,11 +7,11 @@ export const MeetupCover = {
     
   props: {
     title: String,
-    imageUrl: String
+    link: String
   },
   computed: {
     coverStyle() {
-      return this.imageUrl ? {'--bg-url': `url('${this.imageUrl}')`} : {};
+      return this.link ? {'--bg-url': `url('${this.link}')`} : {};
     },
   },
 };

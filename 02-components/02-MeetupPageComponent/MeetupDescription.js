@@ -1,7 +1,7 @@
 export const MeetupDescription = {
+  // <h3>Описание</h3>
   template: `
     <div>
-      <h3>Описание</h3>
       <p class="meetup-description">{{ description }}</p>
     </div>
   `,

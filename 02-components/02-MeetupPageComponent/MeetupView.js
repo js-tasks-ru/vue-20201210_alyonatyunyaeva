@@ -11,7 +11,7 @@ export const MeetupView = {
     <div>
       <MeetupCover 
         :title="meetup.title"
-        :imageUrl="imageUrl"
+        :link="link"
       />
       <div class="container">
         <div class="meetup">
@@ -38,11 +38,12 @@ export const MeetupView = {
   props: {
     meetup: {
       type: Object,
+      required: true,
     }
   },
 
   computed: {
-    imageUrl() {
+    link() {
       return this.meetup?.imageId ? getMeetupCoverLink(this.meetup) : '';
     },
     date(){

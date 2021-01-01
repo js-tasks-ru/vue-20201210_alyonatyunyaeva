@@ -38,9 +38,9 @@ export const MeetupInfo = {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        timezone: 'UTC',
-        hour: 'numeric',
-        minute: 'numeric',
+        // timezone: 'UTC',
+        // hour: 'numeric',
+        // minute: 'numeric',
       });
       return localDate;
     }

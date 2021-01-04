@@ -40,7 +40,7 @@ export const MeetupsCalendar = {
       return this.date.getFullYear()
     },
     dateStringify(){
-      return this.date.toLocaleString("Ru", {year: 'numeric', month: 'long',});
+      return this.date.toLocaleString(navigator.language, {year: 'numeric', month: 'long',});
     },
     daysArray(){
       let currentDate;
@@ -60,8 +60,8 @@ export const MeetupsCalendar = {
       while (daysArray.length < total) {
         currentDate = new Date(this.currentFullYear, this.currentMonth, i);
         todaysMeetups = this.meetups.filter((meetup)=>{
-          let meetupDateStr = new Date(meetup.date).toLocaleString("Ru", {year: 'numeric', month: 'long', day: 'numeric'});
-          let currentDateStr = currentDate.toLocaleString("Ru", {year: 'numeric', month: 'long', day: 'numeric'});
+          let meetupDateStr = new Date(meetup.date).toLocaleString(navigator.language, {year: 'numeric', month: 'long', day: 'numeric'});
+          let currentDateStr = currentDate.toLocaleString(navigator.language, {year: 'numeric', month: 'long', day: 'numeric'});
           return meetupDateStr === currentDateStr;
         });
         daysArray.push({

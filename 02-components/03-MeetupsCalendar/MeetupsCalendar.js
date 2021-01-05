@@ -13,7 +13,7 @@ export const MeetupsCalendar = {
       <div class="rangepicker__date-grid">
         <div class="rangepicker__cell" v-bind:class="{ rangepicker__cell_inactive: day.isInactive }" v-for="day in daysArray">
           {{ day.dayNum }}
-          <a v-if="day.todaysMeetups" v-for="meetup in day.todaysMeetups" :href="'текст_ссылки'+meetup.id" class="rangepicker__event">{{ meetup.title }}</a>
+          <a v-if="day.todaysMeetups" v-for="meetup in day.todaysMeetups" :href="'/meetups/'+meetup.id" class="rangepicker__event">{{ meetup.title }}</a>
         </div>
       </div>
     </div>

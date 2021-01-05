@@ -12,9 +12,12 @@ export const MeetupPage = {
   components: {
     MeetupView,
   },
-  data: {
-    meetup: null,
+  data(){
+    return {
+      meetup: null
+    }
   },
+
   async mounted() {
     this.meetup = await fetchMeetup(MEETUP_ID);
   },

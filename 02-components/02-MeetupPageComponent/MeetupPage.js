@@ -1,16 +1,24 @@
-// import { MeetupView } from './MeetupView.js';
-// import { MEETUP_ID, fetchMeetup } from './data.js';
+import { MeetupView } from './MeetupView.js';
+import { MEETUP_ID, fetchMeetup } from './data.js';
 
-/*export const MeetupPage = {
+export const MeetupPage = {
   name: 'MeetupPage',
 
-  template: `<div>???</div>`,
+  template: `
+    <div>
+      <MeetupView v-if="meetup" :meetup="meetup"/>
+    </div>
+  `,
+  components: {
+    MeetupView,
+  },
+  data(){
+    return {
+      meetup: null
+    }
+  },
 
-  // components
-
-  // data
-
-  // mounted
-
-  // methods
-};*/
+  async mounted() {
+    this.meetup = await fetchMeetup(MEETUP_ID);
+  },
+};

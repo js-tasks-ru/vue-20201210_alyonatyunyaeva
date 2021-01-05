@@ -1,20 +1,48 @@
 export const MeetupInfo = {
-  template: `<ul class="info-list">
-      <li>
-        <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-user.svg" />
-        Организатор
-      </li>
-      <li>
-        <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-map.svg" />
-        Место
-      </li>
-      <li>
-        <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-        <time datetime="2020-01-01">1 янв. 2020</time>
-      </li>
-    </ul>`,
+  template: `
+    <div class="meetup__aside">
+      <ul class="info-list">
+        <li>
+          <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-user.svg" />
+        {{ organizer }}
+        </li>
+        <li>
+          <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-map.svg" />
+        {{ place }}
+        </li>
+        <li>
+          <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
+          <time>{{ localDate }}</time>
+        </li>
+      </ul>
+    </div>
+  `,
 
-  // props
-
-  // computed
+  props: {
+    organizer: {
+      type: String,
+      required: true,
+    },
+    place: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
+  },
+  computed: {
+    localDate () {
+      const localDate = new Date(this.date).toLocaleString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        // timezone: 'UTC',
+        // hour: 'numeric',
+        // minute: 'numeric',
+      });
+      return localDate;
+    }
+  },
 };

@@ -9,7 +9,9 @@
         exact-active-class="content-tabs__tab_active"
       >{{ tab.text }}</router-link>
     </div>
-    <slot class="content-tabs__content"/>
+    <div class="content-tabs__content">
+      <slot />
+    </div>
   </div>
 </template>
 

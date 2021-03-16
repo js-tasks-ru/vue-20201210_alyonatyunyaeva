@@ -14,7 +14,8 @@
       <button 
         class="dropdown__item" 
         :class="{'dropdown__item_icon' : haveIcon}" 
-        type="button" v-for="option in options" 
+        type="button" 
+        v-for="option in options" 
         :key="option.value"
         @click="handleChange(option)"
       >

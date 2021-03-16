@@ -69,7 +69,7 @@ export default {
         return;
       }
       const response = await register(this.email, this.profileName, this.password);
-      alert(response.message || response.id + ' - id пользователя')
+      alert(response.message || response.id)
      
     }
   }
